@@ -1,3 +1,4 @@
+# 팔린드롬 문제 ( 반대로 읽어도 똑같은 단어 결과에 따라 True / False 리턴)
 def is_palindrome(word):
     for i in range(len(word)//2):
         if word[i] != word[-i-1]:
