@@ -12,4 +12,10 @@ import pandas as pd
 df = pd.read_csv('data/broadcast.csv', index_col=0)
 
 
-print(df.loc[2016, 'KBS'])
+# print(df.loc[2016, 'KBS'])
+
+df['PCJ'] = 'no'
+
+df.loc[df['KBS'].values > 28, 'PCJ'] = 'YES'
+
+print(df)

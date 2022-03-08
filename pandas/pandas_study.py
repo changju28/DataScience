@@ -82,7 +82,7 @@ import numpy as np
 # df = pd.DataFrame(my_list)
 # print(df)
 
-iphone_df = pd.read_csv("iphone.csv", index_col=0)
+# iphone_df = pd.read_csv("iphone.csv", index_col=0)
 
 # print(iphone_df)
 
@@ -92,6 +92,75 @@ iphone_df = pd.read_csv("iphone.csv", index_col=0)
 # print(iphone_df.loc[:, '출시일'])
 # print(iphone_df['출시일'])
 
-print(iphone_df.loc['iPhone 8': 'iPhone XS'])
-print()
-print(iphone_df.loc[:, '메모리':'Face ID'])
+# print(iphone_df.loc['iPhone 8': 'iPhone XS'])
+# print()
+# print(iphone_df.loc[:, '메모리':'Face ID'])
+
+# print(iphone_df.loc[[True, False, True, True, False, True, False]])
+# print(iphone_df.loc[[True, False, True, True]])
+
+# print(iphone_df.loc[:, [True, False, False, True]])
+
+# print(iphone_df['디스플레이'] > 5)
+# print(iphone_df.loc[iphone_df['디스플레이'] > 5])
+
+# print(iphone_df.loc[iphone_df['Face ID'] == 'Yes'])
+# print((iphone_df['Face ID'] == 'Yes') & (iphone_df['디스플레이'] > 5))
+
+# print(iphone_df.iloc[[2, 4]])
+
+# print(iphone_df.iloc[[1, 3], [1, 4]])
+# print(iphone_df.iloc[3:, [1, 4]])
+
+# liverpool_df = pd.read_csv('liverpool.csv', index_col=0)
+# print(liverpool_df)
+# print()
+# liverpool_df.rename(columns={'position': 'Position'}, inplace=True)
+# # print(liverpool_df)
+# liverpool_df.index.name = 'Player Name'
+# # print(liverpool_df)
+#
+# liverpool_df['Player Name'] = liverpool_df.index
+# liverpool_df.set_index('number', inplace=True)
+# print(liverpool_df)
+
+# laptops_df = pd.read_csv('laptops.csv')
+
+# print(laptops_df.head(3))
+# print(laptops_df.tail(6))
+
+# print(laptops_df.shape)
+
+# print(laptops_df.columns)
+
+# print(laptops_df.info)
+# print(laptops_df.describe())
+
+# print(laptops_df.sort_values(by='price', ascending=False))
+
+# print(laptops_df['brand'].unique())
+# print(laptops_df['brand'].value_counts())
+# print(laptops_df['brand'].describe())
+
+df = pd.read_csv('world_cities.csv')
+
+# print(world_cities['City / Urban area'].describe())
+# print()
+# print(world_cities['Country'].describe())
+
+# print((world_cities['Population'] / world_cities['Land area (in sqKm)']) > 10000)
+
+# print(world_cities[(world_cities['Population'] / world_cities['Land area (in sqKm)']) > 10000].count())
+# world_cities['a'] = (world_cities['Population'] / world_cities['Land area (in sqKm)']) > 10000
+# print(world_cities['Country'])
+# print(world_cities['Country'].describe())
+# print(world_cities.loc[world_cities['a']==True])
+
+# df["Density"] = df["Population"] / df["Land area (in sqKm)"]
+
+# df_high_density = df[df["Density"] > 10000]
+
+# print(df_high_density.sort_values('Density', ascending=False))
+
+cont = df['Country'].value_counts()
+print(cont[cont == 4].keys())
